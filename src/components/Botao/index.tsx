@@ -1,8 +1,12 @@
 import react from 'react';
 import style from './Botao.module.scss';
 
-class Botao extends react.Component{
+interface Props {
+    children: React.ReactNode;
+  }
+class Botao extends react.Component<React.PropsWithChildren<{}>>{
     render(){
+
         //formas de colocar as variaveis:
         //const color = 'red'; chama a variavel color dentro do style>backgroundColor
         //const backgroundColor= 'blue'; nesse caso vc não coloca valor na backgroundColor, pq o valor ja foi determinado na variavel
@@ -15,7 +19,7 @@ class Botao extends react.Component{
         //}
         return(
             <button className={style.botao} >
-                botão
+                {this.props.children}
             </button>
         )
     }
