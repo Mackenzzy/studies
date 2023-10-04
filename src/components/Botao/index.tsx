@@ -4,8 +4,11 @@ import style from './Botao.module.scss';
 interface Props {
     children: React.ReactNode;
   }
-class Botao extends react.Component<React.PropsWithChildren<{}>>{
+class Botao extends react.Component<React.PropsWithChildren<{
+    type?: "button" | "submit" | "reset" | undefined
+}>>{
     render(){
+        const {type ="button"}  = this.props;
 
         //formas de colocar as variaveis:
         //const color = 'red'; chama a variavel color dentro do style>backgroundColor
@@ -18,7 +21,7 @@ class Botao extends react.Component<React.PropsWithChildren<{}>>{
             //backgroundColor: estaAtivo ?"green":"red"
         //}
         return(
-            <button className={style.botao} >
+            <button type={type} className={style.botao} >
                 {this.props.children}
             </button>
         )
