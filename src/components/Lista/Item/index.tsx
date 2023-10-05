@@ -27,7 +27,7 @@ export default function Item({
         }>
         <h3>{tarefa}</h3>
         <span>{tempo}</span>
-        {completado && <span className={style.concluido} aria-Label = "tarega completada"> </span>}
+        {completado && <span className={style.concluido} aria-label = "tarega completada"> </span>}
     </li>
     )
 }
