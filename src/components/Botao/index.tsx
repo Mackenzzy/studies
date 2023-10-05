@@ -5,10 +5,11 @@ interface Props {
     children: React.ReactNode;
   }
 class Botao extends react.Component<React.PropsWithChildren<{
-    type?: "button" | "submit" | "reset" | undefined
+    type?: "button" | "submit" | "reset" | undefined,
+    onClick?: () => void
 }>>{
     render(){
-        const {type ="button"}  = this.props;
+        const {type ="button", onClick}  = this.props;
 
         //formas de colocar as variaveis:
         //const color = 'red'; chama a variavel color dentro do style>backgroundColor
@@ -21,7 +22,7 @@ class Botao extends react.Component<React.PropsWithChildren<{
             //backgroundColor: estaAtivo ?"green":"red"
         //}
         return(
-            <button type={type} className={style.botao} >
+            <button type={type} onClick={onClick} className={style.botao} >
                 {this.props.children}
             </button>
         )
